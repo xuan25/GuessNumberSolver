@@ -11,7 +11,7 @@
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="60"/>
             <RowDefinition Height="3*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
@@ -27,121 +27,135 @@
                             </Binding.Converter>
                         </Binding>
                     </Border.BorderBrush>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="A:" Margin="2,0" VerticalAlignment="Center" ToolTip="数值和位置均正确的数量"/>
-                        <ComboBox SelectedItem="{Binding A}" Margin="2,0" VerticalAlignment="Center" PreviewKeyDown="ComboBox_PreviewKeyDown" ToolTip="{StaticResource ComboToolTip}">
-                            <ComboBox.Style>
-                                <Style TargetType="{x:Type ComboBox}">
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="FocusManager.FocusedElement" Value="{Binding RelativeSource={RelativeSource Self}}"></Setter>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </ComboBox.Style>
-                            <system:Int32>0</system:Int32>
-                            <system:Int32>1</system:Int32>
-                            <system:Int32>2</system:Int32>
-                            <system:Int32>3</system:Int32>
-                            <system:Int32>4</system:Int32>
-                        </ComboBox>
-                        <TextBlock Text="B:" Margin="2,0" VerticalAlignment="Center" ToolTip="数值正确但位置不正确的数量"/>
-                        <ComboBox SelectedItem="{Binding B}" Margin="2,0" VerticalAlignment="Center" PreviewKeyDown="ComboBox_PreviewKeyDown" ToolTip="{StaticResource ComboToolTip}">
-                            <ComboBox.Style>
-                                <Style TargetType="{x:Type ComboBox}">
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="FocusManager.FocusedElement" Value="{Binding RelativeSource={RelativeSource Self}}"></Setter>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </ComboBox.Style>
-                            <system:Int32>0</system:Int32>
-                            <system:Int32>1</system:Int32>
-                            <system:Int32>2</system:Int32>
-                            <system:Int32>3</system:Int32>
-                            <system:Int32>4</system:Int32>
-                        </ComboBox>
-
-                        <Border Margin="4,0" BorderBrush="#FFACACAC" BorderThickness="1,0,0,0"/>
-
-                        <TextBlock Text="数字正确:" Margin="2,0" VerticalAlignment="Center" ToolTip="数字正确的数量"/>
-                        <ComboBox SelectedItem="{Binding NumCorrect}" Margin="2,0" VerticalAlignment="Center" PreviewKeyDown="ComboBox_PreviewKeyDown" ToolTip="{StaticResource ComboToolTip}">
-                            <ComboBox.Style>
-                                <Style TargetType="{x:Type ComboBox}">
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="FocusManager.FocusedElement" Value="{Binding RelativeSource={RelativeSource Self}}"></Setter>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </ComboBox.Style>
-                            <system:Int32>0</system:Int32>
-                            <system:Int32>1</system:Int32>
-                            <system:Int32>2</system:Int32>
-                            <system:Int32>3</system:Int32>
-                            <system:Int32>4</system:Int32>
-                        </ComboBox>
-                        <TextBlock Text="位置正确:" Margin="2,0" VerticalAlignment="Center" ToolTip="位置正确的数量"/>
-                        <ComboBox SelectedItem="{Binding PosCorrect}" Margin="2,0" VerticalAlignment="Center" PreviewKeyDown="ComboBox_PreviewKeyDown" ToolTip="{StaticResource ComboToolTip}">
-                            <ComboBox.Style>
-                                <Style TargetType="{x:Type ComboBox}">
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="FocusManager.FocusedElement" Value="{Binding RelativeSource={RelativeSource Self}}"></Setter>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </ComboBox.Style>
-                            <system:Int32>0</system:Int32>
-                            <system:Int32>1</system:Int32>
-                            <system:Int32>2</system:Int32>
-                            <system:Int32>3</system:Int32>
-                            <system:Int32>4</system:Int32>
-                        </ComboBox>
+                    <StackPanel VerticalAlignment="Center">
+                        <StackPanel Orientation="Horizontal" Margin="0,2">
+                            <TextBlock Text="A:" Width="60" Margin="2,0" VerticalAlignment="Center" ToolTip="数值和位置均正确的数量"/>
+                            <ComboBox SelectedItem="{Binding A}" Margin="2,0" VerticalAlignment="Center" PreviewKeyDown="ComboBox_PreviewKeyDown" ToolTip="{StaticResource ComboToolTip}">
+                                <ComboBox.Style>
+                                    <Style TargetType="{x:Type ComboBox}">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="FocusManager.FocusedElement" Value="{Binding RelativeSource={RelativeSource Self}}"></Setter>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ComboBox.Style>
+                                <system:Int32>0</system:Int32>
+                                <system:Int32>1</system:Int32>
+                                <system:Int32>2</system:Int32>
+                                <system:Int32>3</system:Int32>
+                                <system:Int32>4</system:Int32>
+                            </ComboBox>
+                            <TextBlock Text="B:" Width="60" Margin="2,0" VerticalAlignment="Center" ToolTip="数值正确但位置不正确的数量"/>
+                            <ComboBox SelectedItem="{Binding B}" Margin="2,0" VerticalAlignment="Center" PreviewKeyDown="ComboBox_PreviewKeyDown" ToolTip="{StaticResource ComboToolTip}">
+                                <ComboBox.Style>
+                                    <Style TargetType="{x:Type ComboBox}">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="FocusManager.FocusedElement" Value="{Binding RelativeSource={RelativeSource Self}}"></Setter>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ComboBox.Style>
+                                <system:Int32>0</system:Int32>
+                                <system:Int32>1</system:Int32>
+                                <system:Int32>2</system:Int32>
+                                <system:Int32>3</system:Int32>
+                                <system:Int32>4</system:Int32>
+                            </ComboBox>
+                        </StackPanel>
+                        <Separator/>
+                        <StackPanel Orientation="Horizontal" Margin="0,2">
+                            <TextBlock Text="数字正确:" Width="60" Margin="2,0" VerticalAlignment="Center" ToolTip="数字正确的数量"/>
+                            <ComboBox SelectedItem="{Binding NumCorrect}" Margin="2,0" VerticalAlignment="Center" PreviewKeyDown="ComboBox_PreviewKeyDown" ToolTip="{StaticResource ComboToolTip}">
+                                <ComboBox.Style>
+                                    <Style TargetType="{x:Type ComboBox}">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="FocusManager.FocusedElement" Value="{Binding RelativeSource={RelativeSource Self}}"></Setter>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ComboBox.Style>
+                                <system:Int32>0</system:Int32>
+                                <system:Int32>1</system:Int32>
+                                <system:Int32>2</system:Int32>
+                                <system:Int32>3</system:Int32>
+                                <system:Int32>4</system:Int32>
+                            </ComboBox>
+                            <TextBlock Text="位置正确:" Width="60" Margin="2,0" VerticalAlignment="Center" ToolTip="位置正确的数量"/>
+                            <ComboBox SelectedItem="{Binding PosCorrect}" Margin="2,0" VerticalAlignment="Center" PreviewKeyDown="ComboBox_PreviewKeyDown" ToolTip="{StaticResource ComboToolTip}">
+                                <ComboBox.Style>
+                                    <Style TargetType="{x:Type ComboBox}">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="FocusManager.FocusedElement" Value="{Binding RelativeSource={RelativeSource Self}}"></Setter>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ComboBox.Style>
+                                <system:Int32>0</system:Int32>
+                                <system:Int32>1</system:Int32>
+                                <system:Int32>2</system:Int32>
+                                <system:Int32>3</system:Int32>
+                                <system:Int32>4</system:Int32>
+                            </ComboBox>
+                        </StackPanel>
                     </StackPanel>
                 </Border>
 
-                <Border ToolTip="手工确认外部回复">
-                    <Button x:Name="ResponseBtn" Content="确认回复" HorizontalAlignment="Right" Margin="10,0" VerticalAlignment="Center" Width="75" Click="ResponseBtn_Click" IsEnabled="{Binding CanSetResponse}"/>
-                </Border>
+                <Border Margin="4,0" BorderBrush="#FFACACAC" BorderThickness="1,0,0,0"/>
+                
+                <StackPanel VerticalAlignment="Center" Margin="4,0">
+                    <Border ToolTip="手工确认外部回复" Margin="0,2">
+                        <Button x:Name="ResponseBtn" Content="确认回复" HorizontalAlignment="Right" Margin="10,0" VerticalAlignment="Center" Width="75" Click="ResponseBtn_Click" IsEnabled="{Binding CanSetResponse}"/>
+                    </Border>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,2">
+                        <TextBox Height="23" Width="100" ToolTip="追加规则的猜测">
+                            <TextBox.Text>
+                                <Binding x:Name="GuessInputBoxBinding"  Path="GuessInput" UpdateSourceTrigger="PropertyChanged" Mode="OneWayToSource">
+                                    <Binding.Converter>
+                                        <local:GuessTextConverter/>
+                                    </Binding.Converter>
+                                    <Binding.ValidationRules>
+                                        <local:GuessTextValidator ValidatesOnTargetUpdated="True" ValidationStep="UpdatedValue"/>
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox.Text>
+                        </TextBox>
+
+                        <Border ToolTip="手工追加规则 - 请确认正确输入了猜测以及对应的回复">
+                            <Button x:Name="AppendRuleBtn" Content="追加规则" HorizontalAlignment="Right" Margin="10,0" VerticalAlignment="Center" Width="75" Click="AppendRuleBtn_Click" IsEnabled="{Binding CanSetResponse}"/>
+                        </Border>
+                    </StackPanel>
+                </StackPanel>
+                
 
                 <Border Margin="4,0"/>
 
-                <TextBox Height="23" Width="100" ToolTip="追加规则的猜测">
-                    <TextBox.Text>
-                        <Binding x:Name="GuessInputBoxBinding"  Path="GuessInput" UpdateSourceTrigger="PropertyChanged" Mode="OneWayToSource">
-                            <Binding.Converter>
-                                <local:GuessTextConverter/>
-                            </Binding.Converter>
-                            <Binding.ValidationRules>
-                                <local:GuessTextValidator ValidatesOnTargetUpdated="True" ValidationStep="UpdatedValue"/>
-                            </Binding.ValidationRules>
-                        </Binding>
-                    </TextBox.Text>
-                </TextBox>
-
-                <Border ToolTip="手工追加规则 - 请确认正确输入了猜测以及对应的回复">
-                    <Button x:Name="AppendRuleBtn" Content="追加规则" HorizontalAlignment="Right" Margin="10,0" VerticalAlignment="Center" Width="75" Click="AppendRuleBtn_Click" IsEnabled="{Binding CanSetResponse}"/>
-                </Border>
+                
                 
             </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,0" VerticalAlignment="Center">
+            <StackPanel HorizontalAlignment="Right" Margin="10,0" VerticalAlignment="Center">
 
-                <Border ToolTip="登录到blibili，用于自动发送弹幕">
+                <Border ToolTip="登录到blibili，用于自动发送弹幕" Margin="0,2">
                     <Button Content="登录" HorizontalAlignment="Right" Margin="10,0" VerticalAlignment="Center" Width="75" Click="LoginBtn_Click" IsEnabled="{Binding IsNotLoggedin}"/>
                 </Border>
 
-                <ComboBox Width="120" xmlns:game="clr-namespace:GuessNumber.Game" SelectedIndex="0" SelectedValuePath="Tag" SelectedValue="{Binding SelectedMode}">
-                    <ComboBoxItem Content="测试模式" ToolTip="测试模式 - 测试模式 快速输出结果" Tag="{x:Type game:MyPuzzle}"/>
-                    <ComboBoxItem Content="演示模式" ToolTip="演示模式 - 解析演示 模拟回复时间间隔为1秒" Tag="{x:Type game:DemoPuzzle}"/>
-                    <ComboBoxItem Content="纯手工模式" ToolTip="纯手工模式 - 手工发送猜测，手工输入回复" Tag="{x:Type game:ManualPuzzle}"/>
-                    <ComboBoxItem Content="半自动弹幕模式 @ 冬灰条" ToolTip="半自动弹幕模式 - 自动发送猜测弹幕，手工输入回复" Tag="{x:Type game:TiaoSemiDanmakuPuzzle}"/>
-                    <ComboBoxItem Content="全自动弹幕模式 @ 冬灰条" ToolTip="全自动弹幕模式 - 自动发送猜测弹幕，自动读取弹幕回复 (如果有)" Tag="{x:Type game:TiaoDanmakuPuzzle}"/>
-                </ComboBox>
-                <Border ToolTip="开始新的推理">
-                    <Button Content="开始" HorizontalAlignment="Right" Margin="10,0" VerticalAlignment="Center" Width="75" Click="StartBtn_Click"/>
-                </Border>
+                <StackPanel Orientation="Horizontal" Margin="0,2">
+                    <ComboBox Width="120" xmlns:game="clr-namespace:GuessNumber.Game" SelectedIndex="0" SelectedValuePath="Tag" SelectedValue="{Binding SelectedMode}">
+                        <ComboBoxItem Content="测试模式" ToolTip="测试模式 - 测试模式 快速输出结果" Tag="{x:Type game:MyPuzzle}"/>
+                        <ComboBoxItem Content="演示模式" ToolTip="演示模式 - 解析演示 模拟回复时间间隔为1秒" Tag="{x:Type game:DemoPuzzle}"/>
+                        <ComboBoxItem Content="纯手工模式" ToolTip="纯手工模式 - 手工发送猜测，手工输入回复" Tag="{x:Type game:ManualPuzzle}"/>
+                        <ComboBoxItem Content="半自动弹幕模式 @ 冬灰条" ToolTip="半自动弹幕模式 - 自动发送猜测弹幕，手工输入回复" Tag="{x:Type game:TiaoSemiDanmakuPuzzle}"/>
+                        <ComboBoxItem Content="全自动弹幕模式 @ 冬灰条" ToolTip="全自动弹幕模式 - 自动发送猜测弹幕，自动读取弹幕回复 (如果有)" Tag="{x:Type game:TiaoDanmakuPuzzle}"/>
+                    </ComboBox>
+                    <Border ToolTip="开始新的推理">
+                        <Button Content="开始" HorizontalAlignment="Right" Margin="10,0" VerticalAlignment="Center" Width="75" Click="StartBtn_Click"/>
+                    </Border>
+                </StackPanel>
+                
             </StackPanel>
 
         </Grid>
