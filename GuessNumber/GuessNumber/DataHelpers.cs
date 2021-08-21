@@ -13,30 +13,9 @@ using System.Windows.Media;
 
 namespace GuessNumber
 {
-    class GuessTextValidator : ValidationRule
+    internal abstract class ExtendedValidationRule : ValidationRule
     {
-        public override ValidationResult Validate(object value, CultureInfo cultureInfo)
-        {
-            try
-            {
-                Guess guess = GetBoundValue<Guess>(value);
-                if (guess == null)
-                {
-                    return new ValidationResult(false, "Invalid");
-                }
-                else
-                {
-                    return new ValidationResult(true, null);
-                }
-            }
-            catch (Exception ex)
-            {
-                return new ValidationResult(true, "Designing mode");
-            }
-            
-        }
-
-        private T GetBoundValue<T>(object value)
+        protected static T GetBoundValue<T>(object value)
         {
             if (value is BindingExpression)
             {
@@ -62,7 +41,7 @@ namespace GuessNumber
             }
         }
 
-        public static object GetPropertyValue(object obj, string propertyName)
+        private static object GetPropertyValue(object obj, string propertyName)
         {
             foreach (string part in propertyName.Split('.'))
             {
@@ -75,8 +54,32 @@ namespace GuessNumber
         }
     }
 
+    internal class GuessTextValidator : ExtendedValidationRule
+    {
+        public override ValidationResult Validate(object value, CultureInfo cultureInfo)
+        {
+            try
+            {
+                Guess guess = GetBoundValue<Guess>(value);
+                if (guess == null)
+                {
+                    return new ValidationResult(false, "Invalid");
+                }
+                else
+                {
+                    return new ValidationResult(true, null);
+                }
+            }
+            catch (Exception)
+            {
+                return new ValidationResult(true, "Designing mode");
+            }
+            
+        }
+    }
+
     [ValueConversion(typeof(Guess), typeof(string))]
-    class GuessTextConverter : IValueConverter
+    internal class GuessTextConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -117,7 +120,7 @@ namespace GuessNumber
     }
 
     [ValueConversion(typeof(bool), typeof(SolidColorBrush))]
-    class BrushBoolConverter : IValueConverter
+    internal class BrushBoolConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
