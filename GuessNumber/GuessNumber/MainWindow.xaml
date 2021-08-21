@@ -201,7 +201,7 @@
             <DataGrid Grid.Column="0" ItemsSource="{Binding WeightMatrixView}" AutoGenerateColumns="True" CanUserSortColumns="False" CanUserReorderColumns="False" IsReadOnly="True" ColumnWidth="*" ToolTip="权重矩阵 统计候选项中各位置每个数字的频次"/>
 
             <Grid Grid.Column="1">
-                <TextBox Text="{Binding LogText}" IsReadOnly="True" TextWrapping="NoWrap" VerticalScrollBarVisibility="Visible" ToolTip="日志记录"/>
+                <TextBox x:Name="LogBox" Text="{Binding LogText}" IsReadOnly="True" TextWrapping="NoWrap" VerticalScrollBarVisibility="Visible" ToolTip="日志记录" TextChanged="LogBox_TextChanged"/>
             </Grid>
 
             <GridSplitter Grid.Column="0" HorizontalAlignment="Right" Width="4" VerticalAlignment="Stretch" Background="Transparent" ResizeDirection="Columns"/>

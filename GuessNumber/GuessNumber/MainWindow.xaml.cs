@@ -709,6 +709,11 @@ namespace GuessNumber
             AppendRule();
         }
 
+        private void LogBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            ((TextBox)sender).ScrollToEnd();
+        }
+
         #endregion
 
     }
